@@ -1,12 +1,10 @@
-from func import *
+from utils.func import *
 
 def calculate_frequencies(text: str) -> dict:
     """
-
     Вычисляет частоту появления символов в зашифрованном тексте
     :param text: Исходный текст.
     :return: Словарь с частотами символов
-
     """
 
 
@@ -29,12 +27,10 @@ def calculate_frequencies(text: str) -> dict:
 
 def create_key(real_freq, ru_freq):
     """
-
     Создает прямое сопоставление символов по частотам
     :param real_freq: Частоты символов в зашифрованном тексте.
     :param ru_freq: Частоты символов в русском языке.
     :return: Ключ
-
     """
 
     real_freq_upper = {k.upper(): v for k, v in real_freq.items()}
@@ -54,12 +50,10 @@ def create_key(real_freq, ru_freq):
 
 def create_char_mapping(text: str, key: dict) -> str:
     """
-
     Дешифрует текст.
     :param text: Зашифрованный текст
     :param key: Ключ
     :return: Дешифрованный текст
-
     """
     text = text.upper()
     encrypted_text = ""

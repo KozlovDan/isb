@@ -1,7 +1,0 @@
-{
-  "alphabet": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ",
-  "original_text": "task1/original_text.txt",
-  "encrypted_text": "task1/encrypted_text.txt",
-  "decrypted_text": "task1/decrypted_text.txt",
-  "key": "task1/key.json"
-}
