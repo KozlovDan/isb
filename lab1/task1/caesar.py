@@ -63,22 +63,24 @@ def parse_args():
 def main():
     args = parse_args()
     try:
-        config = open_json(args.config)
-        if args.mode == 'encrypt':
-            text = open_file(config["original_text"])
-            key = open_json(config["key"])
-            result = encrypt_caesar(text, key["shift"], config["alphabet"])
-            save_file(config["encrypted_text"], result)
-            print("Текст успешно зашифрован")
-        elif args.mode == 'decrypt':
-            text = open_file(config["encrypted_text"])
-            key = open_json(config["key"])
-            result = decrypt_caesar(text, key["shift"], config["alphabet"])
-            save_file(config["decrypted_text"], result)
-            print("Текст успешно расшифрован")
+        match args.mode:
+            case 'encrypt':
+                text = open_file(config["original_text"])
+                key = open_json(config["key"])
+                result = encrypt_caesar(text, key["shift"], config["alphabet"])
+                save_file(config["encrypted_text"], result)
+                print("Текст успешно зашифрован")
+            case 'decrypt':
+                text = open_file(config["encrypted_text"])
+                key = open_json(config["key"])
+                result = decrypt_caesar(text, key["shift"], config["alphabet"])
+                save_file(config["decrypted_text"], result)
+                print("Текст успешно расшифрован")
         return 0
     except Exception as e:
         print(f"Ошибка: {e}")
+
+
 
 if __name__ == "__main__":
     main()
